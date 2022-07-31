@@ -1,0 +1,13 @@
+<% if @movie.cover.present? %>
+    <%= image_tag url_for(@movie.cover) %>
+<% end %>
+
+
+
+<h2>Nombre: <%= @movie.title%><h2>
+<p>Fecha: <%= @movie.date%></p>
+<p>Plataforma: <%= @movie.platform%></p>
+<p>Review: <%= @movie.review%></p>
+
+<%= link_to 'Editar', edit_movie_path(id:@movie.id) %>
+<%= link_to 'Eliminar', delete_movie_path(@movie), data: { turbo_method: :delete, turbo_confirm: "¿Estás seguro de eliminar esta pelicula?" } %>

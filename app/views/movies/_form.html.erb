@@ -1,0 +1,25 @@
+<%=form_with model: @movie do |f| %>
+
+    <div>
+        <%= f.label 'Titulo' %>
+        <%= f.text_field :title %>
+    <div>
+    <div>
+        <%= f.label 'Fecha de estreno' %>
+        <%= f.date_field :date %>
+    <div>
+    <div>
+        <%= f.label 'Plataforma' %>
+        <%= f.text_field :platform %>
+    <div>
+    <div>
+        <%= f.label 'Agregar imagen: ', style: "display:block" %>
+        <%= f.file_field :cover %>
+    </div>
+    <div>
+        <%= f.label 'Reseña' %>
+        <%= f.text_area :review %>
+    <div>
+      
+    <%= f.submit message %>
+<%end%>

@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: movies
+#
+#  id         :integer          not null, primary key
+#  date       :date
+#  platform   :string
+#  review     :text
+#  title      :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  title: MyString
+  date: 2022-07-06
+  platform: MyString
+  review: MyText
+
+two:
+  title: MyString
+  date: 2022-07-06
+  platform: MyString
+  review: MyText

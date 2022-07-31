@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Moview Reseñas de Peliculas</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    
+  </head>
+
+  <body>
+    <section class="layout">
+      <header>
+        <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark text-white"> 
+            <%= link_to root_path, class: "nav-link" do  %>
+              <%= image_tag "logo.png", alt: "ValoradorPeliculas", height: 100, class:'m-2' %>
+            <% end %>
+            <% if signed_in? %>
+            <%= link_to 'Cerrar Sesión', destroy_user_session_path, class:'nav-link', data: { turbo_method: :delete } %>
+            <% else %>
+              <%= link_to "Ingresar", new_user_session_path, class:'nav-link m-4' %>
+              <%= link_to "Registrarse", new_user_registration_path, class:'nav-link m-4' %>
+            <% end %>
+        </nav>
+      </header>
+      <main>
+         <%= yield %>
+      </main>
+      <footer class="bg-dark text-white p-4">
+        <p>Derechos reservados &copy Claudia Gonzalez <%=Time.now.year%> </p>
+      </footer>
+    </section>
+  </body>
+</html>
+
+

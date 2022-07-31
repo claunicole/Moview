@@ -1,0 +1,31 @@
+<div class="m-5">
+<h2>Registrate</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Contraseña" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> Caracteres minimo)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Respite tu contraseña" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Registrarse", data: {turbo: false}, class:"btn btn-primary btn-block m-4" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>
