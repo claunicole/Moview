@@ -74,3 +74,4 @@ end
 
 gem 'devise'
 gem "bootstrap", "~> 5.2"
+gem 'friendly_id', '~> 5.4.0'

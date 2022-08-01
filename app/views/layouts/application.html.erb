@@ -19,14 +19,19 @@
               <%= image_tag "logo.png", alt: "ValoradorPeliculas", height: 100, class:'m-2' %>
             <% end %>
             <% if signed_in? %>
-            <%= link_to 'Cerrar Sesión', destroy_user_session_path, class:'nav-link', data: { turbo_method: :delete } %>
+            <%= link_to 'Cerrar Sesión', destroy_user_session_path, class:'nav-link m-5', data: { turbo_method: :delete } %>
             <% else %>
               <%= link_to "Ingresar", new_user_session_path, class:'nav-link m-4' %>
               <%= link_to "Registrarse", new_user_registration_path, class:'nav-link m-4' %>
             <% end %>
+            <%= form_tag search_movies_path, class:"form-inline my-2 my-lg-0", method: :get do %>
+                <%= text_field_tag :q, params[:q], placeholder:"Buscar", class:"form-control mr-sm-2" %>
+                <button class="btn btn-outline-success", type:"submit" >Enviar</button>           
+        <% end %>
         </nav>
       </header>
       <main>
+         <%= render partial: 'partials/messages' %>
          <%= yield %>
       </main>
       <footer class="bg-dark text-white p-4">
@@ -34,6 +39,17 @@
       </footer>
     </section>
   </body>
+  <script>
+      var buttons = document.querySelectorAll('.btn-close');
+      for (var i = 0; i < buttons.length; i++) {
+        var buttons = buttons [i];
+
+        buttons.addEventListener('click', function(e) {
+          var message = document.getElementById("message-" + buttons.value)
+          message.style.display = "none";
+            });
+      }
+  </script>
 </html>
 
 

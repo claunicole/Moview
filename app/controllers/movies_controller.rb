@@ -12,7 +12,12 @@ class MoviesController < ApplicationController
 
   def create
     @movie = Movie.create movie_params
-    redirect_to movies_path
+
+    if @movie.persisted?
+       redirect_to movies_path, notice: "La reseña ha sido creada de forma exitosa"
+    else
+       render :new, status: :unprocessable_entity
+    end
   end
 
   def show
@@ -23,21 +28,32 @@ class MoviesController < ApplicationController
 
   def update
     @movie.update movie_params
-    redirect_to movies_path
+
+    if @movie.update movie_params
+        redirect_to movies_path, notice: "La reseña ha sido actualizada de forma exitosa"
+    else
+        render :edit, status: :unprocessable_entity
+    end
   end 
 
   def destroy
     @movie.destroy
-    redirect_to movies_path
+    redirect_to movies_path, 
+    status: :see_other, notice: "La reseña ha sido eliminada de forma exitosa"
+  end
+
+  def search
+    @q = params[:q]
+    @movie = Movie.where("title LIKE ?", "%#{@q}%")
   end
 
   private
 
   def set_movie
-    @movie = Movie.find params[:id]
+    @movie = Movie.friendly.find(params[:id])
   end
 
   def movie_params
-    params.require(:movie).permit(:title, :date, :platform, :review, :cover)
+    params.require(:movie).permit(:title, :date, :platform, :review, :cover, category_ids:[])
   end
 end

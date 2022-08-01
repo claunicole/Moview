@@ -6,15 +6,28 @@
 #  date       :date
 #  platform   :string
 #  review     :text
+#  slug       :string
 #  title      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Indexes
+#
+#  index_movies_on_slug  (slug) UNIQUE
+#
 class Movie < ApplicationRecord
 
-    validates :title, presence: true, uniqueness: true
+    extend FriendlyId
+    friendly_id :title, use: :slugged
+
+    validates :title, presence: { message: 'El titulo es requerido.'}, uniqueness: true
+    validates :review, presence: { message: 'La reseña es requerida.'}
 
     has_one_attached :cover
     
+    has_many :movie_categories
+    has_many :categories, through: :movie_categories
+
+    accepts_nested_attributes_for :categories
 
 end
