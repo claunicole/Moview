@@ -3,13 +3,23 @@
 <% end %>
 
 <% @movie.categories.each do |category| %>
-    <p>Categoria: <%= category.name %></p>
+    <p>Categoria: <%= @movie.category_default %></p>
 <%end%>
 
+<div>
 <h2>Nombre: <%= @movie.title%><h2>
 <p>Fecha: <%= @movie.date%></p>
 <p>Plataforma: <%= @movie.platform%></p>
-<p>Review: <%= @movie.review%></p>
+<p >Review: <%= @movie.review %></p>
 
+<div class="m-4">
 <%= link_to 'Editar', edit_movie_path(@movie) %>
 <%= link_to 'Eliminar', movie_path(@movie), data: { turbo_method: :delete, turbo_confirm: "¿Estás seguro de eliminar esta pelicula?" } %>
+</div>
+
+<%= render partial: 'comments/form' %>
+
+<section class="m-4">
+    <h2>Comentarios:</h2>
+    <%= render partial: 'comments/comment', collection:@movie.comments, as: :comment %>
+</section>

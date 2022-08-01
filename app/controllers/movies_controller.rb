@@ -15,6 +15,7 @@ class MoviesController < ApplicationController
 
     if @movie.persisted?
        redirect_to movies_path, notice: "La reseña ha sido creada de forma exitosa"
+       UserMailer.hello.deliver_now
     else
        render :new, status: :unprocessable_entity
     end
@@ -37,6 +38,7 @@ class MoviesController < ApplicationController
   end 
 
   def destroy
+    @movie.categories.clear if @movie.categories.any?
     @movie.destroy
     redirect_to movies_path, 
     status: :see_other, notice: "La reseña ha sido eliminada de forma exitosa"

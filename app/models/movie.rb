@@ -27,7 +27,13 @@ class Movie < ApplicationRecord
     
     has_many :movie_categories
     has_many :categories, through: :movie_categories
+    has_many :comments, -> { order(created_at: :desc) }
 
     accepts_nested_attributes_for :categories
+
+    def category_default
+        return self.categories.first.name if self.categories.any?
+        ''
+    end
 
 end
