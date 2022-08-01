@@ -17,9 +17,8 @@ Rails.application.routes.draw do
 
   resources :movies do
     get 'search', on: :collection
+    resources :comments, only: [:create]
   end
-
-  #get 'home/index'
   
  root 'movies#index'
 

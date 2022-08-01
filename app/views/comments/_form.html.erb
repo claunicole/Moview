@@ -1,0 +1,11 @@
+<%= form_with model:[@movie, Comment.new] do |f| %>
+    <div class="form- m-5">
+    <div>
+        <%= f.text_area :content, placeholder:"Deja tu comentario" %> 
+    </div>
+
+    <div>
+        <%= f.submit "Enviar", class:"btn btn-primary m-2" %>
+    </div>
+    </div>
+<%end%>    

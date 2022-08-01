@@ -2,11 +2,11 @@ class UserMailer < ApplicationMailer
 
     default from: 'notifications@example.com'
 
-    def mail
-        @user = params[:user]
-        @url  = 'http://example.com/login'
-        mail(to: @user.email, subject: 'Welcome to My Awesome Site')
+    def hello()
+     
+        mail(to: 'clau@mail.com', subject: 'Se ha publicado una nueva reseña')
+        
       end
-    end
+    
 
 end
