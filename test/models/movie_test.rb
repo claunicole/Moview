@@ -2,7 +2,7 @@
 #
 # Table name: movies
 #
-#  id         :integer          not null, primary key
+#  id         :bigint           not null, primary key
 #  date       :date
 #  platform   :string
 #  review     :text

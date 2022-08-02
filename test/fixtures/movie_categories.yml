@@ -2,7 +2,7 @@
 #
 # Table name: movie_categories
 #
-#  id          :integer          not null, primary key
+#  id          :bigint           not null, primary key
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  category_id :integer          not null
@@ -15,8 +15,8 @@
 #
 # Foreign Keys
 #
-#  category_id  (category_id => categories.id)
-#  movie_id     (movie_id => movies.id)
+#  fk_rails_...  (category_id => categories.id)
+#  fk_rails_...  (movie_id => movies.id)
 #
 
 one:

@@ -2,7 +2,7 @@
 #
 # Table name: comments
 #
-#  id         :integer          not null, primary key
+#  id         :bigint           not null, primary key
 #  content    :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -14,7 +14,7 @@
 #
 # Foreign Keys
 #
-#  movie_id  (movie_id => movies.id)
+#  fk_rails_...  (movie_id => movies.id)
 #
 require "test_helper"
 
