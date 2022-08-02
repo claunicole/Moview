@@ -1,25 +1,29 @@
-<% if @movie.cover.present? %>
-    <%= image_tag url_for(@movie.cover) %>
-<% end %>
+<div class="m-5">
+    <div class="card">
+        <div class="card-body">
+            <% if @movie.cover.present? %>
+                <%= image_tag url_for(@movie.cover) %>
+            <% end %>
+            <% @movie.categories.each do |category| %>
+                <p>Categoria: <%= @movie.category_default %></p>
+            <%end%>
+            <h3 class="card-title">Nombre: <%= @movie.title%></h3>
+            <h6 class="card-subtitle">Fecha: <%= @movie.date%></h6>
+            <div class="col-lg-7 col-md-7 col-sm-6">
+            <h4 class="box-title mt-5">Reseña:</h4>
+            <p ><%= @movie.review %></p>
+            <% if signed_in? %>
+                <div class="m-4">
+                <%= link_to 'Editar', edit_movie_path(@movie), class:"btn btn-primary" %>
+                <%= link_to 'Eliminar', movie_path(@movie), data: { turbo_method: :delete, turbo_confirm: "¿Estás seguro de eliminar esta pelicula?" }, class:"btn btn-primary" %>
+            </div>
 
-<% @movie.categories.each do |category| %>
-    <p>Categoria: <%= @movie.category_default %></p>
-<%end%>
-
-<div>
-<h2>Nombre: <%= @movie.title%><h2>
-<p>Fecha: <%= @movie.date%></p>
-<p>Plataforma: <%= @movie.platform%></p>
-<p >Review: <%= @movie.review %></p>
-
-<div class="m-4">
-<%= link_to 'Editar', edit_movie_path(@movie) %>
-<%= link_to 'Eliminar', movie_path(@movie), data: { turbo_method: :delete, turbo_confirm: "¿Estás seguro de eliminar esta pelicula?" } %>
+            <div class="container m-3 border-top">
+                <%= render partial: 'comments/form' %>
+                <% end %>
+                <h2>Comentarios:</h2>
+                <%= render partial: 'comments/comment', collection:@movie.comments, as: :comment %>
+            </div>
+        </div>
+    </div>
 </div>
-
-<%= render partial: 'comments/form' %>
-
-<section class="m-4">
-    <h2>Comentarios:</h2>
-    <%= render partial: 'comments/comment', collection:@movie.comments, as: :comment %>
-</section>

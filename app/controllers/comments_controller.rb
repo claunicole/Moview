@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
     before_action :set_product, only: [:create]
+    before_action :authenticate_user!
 
     def create
         @movie.comments.create(comment_params)

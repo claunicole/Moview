@@ -1,7 +1,9 @@
+
+
 <%= form_with model:[@movie, Comment.new] do |f| %>
-    <div class="form- m-5">
+    <div class="d-flex align-items-center m-5">
     <div>
-        <%= f.text_area :content, placeholder:"Deja tu comentario" %> 
+        <%= f.text_area :content, placeholder:"Deja tu comentario", class:"w-100 h-25 p-5" %> 
     </div>
 
     <div>
