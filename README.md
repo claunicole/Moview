@@ -14,8 +14,6 @@ Claudia González Fuentes.
 
 *Moview es un sitio que permite ver y crear reseñas de películas.
 
-Para mayor referencia del proyecto, revise el siguiente (documento)[].
-
 
 ---
 ### Inicio Rapido
