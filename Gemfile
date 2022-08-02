@@ -9,7 +9,8 @@ gem "rails", "~> 7.0.3"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-
+# Use sqlite3 as the database for Active Record
+gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -77,7 +78,4 @@ gem "bootstrap", "~> 5.2"
 gem 'friendly_id', '~> 5.4.0'
 
 gem "sidekiq", "~> 6.5"
-
-group :production do
-  gem 'pg'
-end
+gem "figaro"
