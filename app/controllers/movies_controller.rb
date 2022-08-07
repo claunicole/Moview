@@ -46,7 +46,7 @@ class MoviesController < ApplicationController
 
   def search
     @q = params[:q]
-    @movie = Movie.where("title LIKE ?", "%#{@q}%")
+    @movie = Movie.where("title ILIKE ?", "%#{@q}%")
   end
 
   private
