@@ -49,3 +49,8 @@ El Navbar permite ir a iniciar sesión, registrarse y ademas utilizar el buscado
 - Devise
 ---
 
+### Deploy
+
+El deploy fue realizado en Heroku, Para acceder , puede dar click [Aquí](https://review-movie-app.herokuapp.com/)
+
+# [Website Moview](https://review-movie-app.herokuapp.com/)
