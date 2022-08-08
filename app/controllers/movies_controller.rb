@@ -15,7 +15,7 @@ class MoviesController < ApplicationController
 
     if @movie.persisted?
        redirect_to movies_path, notice: "La reseña ha sido creada de forma exitosa"
-       UserMailer.hello.deliver_now
+       #UserMailer.hello.deliver_now
     else
       redirect_to movies_path, notice: "Error al crear la reseña"
     end
