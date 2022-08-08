@@ -39,6 +39,7 @@ class MoviesController < ApplicationController
 
   def destroy
     @movie.categories.clear if @movie.categories.any?
+    @movie.comments.destroy_all if @movie.comments.any?
     @movie.destroy
     redirect_to movies_path, 
     status: :see_other, notice: "La reseña ha sido eliminada de forma exitosa"
