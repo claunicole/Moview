@@ -17,7 +17,7 @@ class MoviesController < ApplicationController
        redirect_to movies_path, notice: "La reseña ha sido creada de forma exitosa"
        UserMailer.hello.deliver_now
     else
-      redirect_to movies_path, notice: "Error al crear la reseña"
+      render :new, status: :unprocessable_entity
     end
   end
 
