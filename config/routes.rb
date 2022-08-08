@@ -17,7 +17,6 @@ Rails.application.routes.draw do
 
   resources :movies do
     get 'search', on: :collection
-    post 'movies', to: 'movies#create'
     resources :comments, only: [:create]
   end
   

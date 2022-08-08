@@ -14,7 +14,7 @@ class MoviesController < ApplicationController
     @movie = Movie.create movie_params
 
     if @movie.persisted?
-       redirect_to movies_path(@movie), notice: "La reseña ha sido creada de forma exitosa"
+       redirect_to @movie, notice: "La reseña ha sido creada de forma exitosa"
        UserMailer.hello.deliver_now
     else
        render :new, status: :unprocessable_entity
