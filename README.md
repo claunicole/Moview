@@ -14,8 +14,6 @@ Claudia González Fuentes.
 
 *Moview es un sitio que permite ver y crear reseñas de películas.
 
-Para mayor referencia del proyecto, revise el siguiente (documento)[].
-
 
 ---
 ### Inicio Rapido
@@ -51,10 +49,3 @@ El Navbar permite ir a iniciar sesión, registrarse y ademas utilizar el buscado
 - Devise
 ---
 
-### Despliegue
-
-El deploy del sitio fue realizado en Heroku, Para acceder , puede dar click [Aquí]()
-
-# [Sitio Moview]()
-
----
