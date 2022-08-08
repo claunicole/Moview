@@ -18,7 +18,7 @@ Claudia González Fuentes.
 ---
 ### Inicio Rapido
 
-Para arrancar el proyecto en un ambiente local. realice lo siguiente:
+Para arrancar el proyecto en un ambiente local, realice lo siguiente:
 
 1- Descargue el contenido de este repositorio
 
