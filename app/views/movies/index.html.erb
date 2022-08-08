@@ -1,6 +1,6 @@
 <h1>Catalogo de Peliculas</h1>
 
-<%= link_to 'Crear Reseña', "movies/new",data: { turbo: "false" },  class:'btn btn-primary m-2' %>
+<%= link_to 'Crear Reseña', "movies/new", class:'btn btn-primary m-2' %>
 
 <div>
 <%= render partial:'movie', collection:@movies%>
