@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-body">
             <% if @movie.cover.present? %>
-                <%= image_tag url_for(@movie.cover) %>
+                <%= image_tag url_for(@movie.cover), class:"cover-img" %>
             <% end %>
             <% @movie.categories.each do |category| %>
                 <p>Categoria: <%= @movie.category_default %></p>
