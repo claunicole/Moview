@@ -4,9 +4,12 @@
             <% if @movie.cover.present? %>
                 <%= image_tag url_for(@movie.cover), class:"cover-img" %>
             <% end %>
-            <% @movie.categories.each do |category| %>
-                <p>Categoria: <%= @movie.category_default %></p>
-            <%end%>
+            <div class="category-container">
+                <p>Categorias: </p>
+                <% @movie.categories.each do |category| %>
+                    <p><%= category.name %></p>
+                    <%end%>
+            </div>
             <h3 class="card-title">Titulo: <%= @movie.title%></h3>
             <h6 class="card-subtitle">Fecha: <%= @movie.date%></h6>
             <div class="col-lg-7 col-md-7 col-sm-6">
