@@ -20,11 +20,17 @@ Claudia González Fuentes.
 
 Para arrancar el proyecto en un ambiente local, realice lo siguiente:
 
-1- Descargue el contenido de este repositorio
+1- Descargue el contenido de este repositorio.
 
-2.- Asegurese de tener las gemas instaladas, para eso se debe escribir en el terminal "bundle install
+2.- Asegurese de tener las gemas instaladas, para eso se debe escribir en el terminal "bundle install.
 
-3.- Utilizar el comando "rails server" lo que permitirá correr el servidor de forma local.
+3.- Asegurese de tener PostgreSQL funcionando correctamente.
+
+4.- Crear un archivo database.yml dentro de la carpeta config, rellene los campos necesarios siguiendo las instrucciones del archivo database.yml.example 
+
+5.- Activar Redis con el comando: redis-server.
+
+6.- Utilizar el comando "rails server" lo que permitirá correr el servidor de forma local.
 
 ---
 

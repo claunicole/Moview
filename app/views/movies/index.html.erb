@@ -1,8 +1,11 @@
-<h1>Catalogo de Peliculas</h1>
-
-<%= link_to 'Crear Reseña', "movies/new", class:'btn btn-primary m-2' %>
-
-<div>
-<%= render partial:'movie', collection:@movies%>
+<section>
+<div class="movies-text">
+    <h1 >Catalogo de Peliculas</h1>
 </div>
-
+<%= link_to 'Nueva Reseña', "movies/new", class:'btn btn-primary button-review' %>
+<div >
+<div class="d-flex flex-row justify-center align-items-center flex-wrap">
+    <%= render partial:'movie', collection:@movies %>
+    </div>
+</div>
+</section>

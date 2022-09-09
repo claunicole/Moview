@@ -14,7 +14,7 @@
   <body>
     <section class="layout">
       <header>
-        <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark text-white"> 
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white"> 
             <%= link_to root_path, class: "nav-link" do  %>
               <%= image_tag "logo.png", alt: "ValoradorPeliculas", height: 100, class:'m-2' %>
             <% end %>
@@ -34,8 +34,25 @@
          <%= render partial: 'partials/messages' %>
          <%= yield %>
       </main>
-      <footer class="bg-dark text-white p-4">
-        <p>Derechos reservados &copy Claudia Gonzalez <%=Time.now.year%> </p>
+      <footer class="bg-dark text-white p-4 footer">
+      <ul class="social-media">
+        <li>
+        <%=link_to "https://www.linkedin.com/in/claudia-gonzalez-fuentes/", :target => "_blank" do %>
+           <%=image_tag ("https://firebasestorage.googleapis.com/v0/b/ecommerce-coder-tradegames.appspot.com/o/linkedin-logo.png?alt=media&token=0cad02a0-e41d-4572-a710-16330dbaafb9"), :class => "socialmedia-icon", :alt => "Linkedin"%>
+           <% end %>
+        </li>
+        <li>
+        <%=link_to "https://github.com/claunicole", :target => "_blank" do %>
+           <%=image_tag ("https://firebasestorage.googleapis.com/v0/b/ecommerce-coder-tradegames.appspot.com/o/github-logo.png?alt=media&token=2a32efc7-ba40-4ae6-8b05-601a1e24bd88"), :class => "socialmedia-icon", :alt => "Github"%>
+           <% end %>
+        </li>
+        <li>
+        <%=link_to "https://twitter.com/Claunicole1", :target => "_blank" do %>
+           <%=image_tag ("https://firebasestorage.googleapis.com/v0/b/ecommerce-coder-tradegames.appspot.com/o/Twitter-logo.svg.png?alt=media&token=d3f67340-3a9e-4094-b48c-99fef30f954f"), :class => "socialmedia-icon", :alt => "Twitter"%>
+           <% end %>
+        </li>
+      </ul>
+      <p>Derechos reservados &copy Claudia Gonzalez <%=Time.now.year%> </p>
       </footer>
     </section>
   </body>
@@ -51,5 +68,3 @@
       }
   </script>
 </html>
-
-

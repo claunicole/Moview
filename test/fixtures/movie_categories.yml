@@ -5,8 +5,8 @@
 #  id          :bigint           not null, primary key
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  category_id :integer          not null
-#  movie_id    :integer          not null
+#  category_id :bigint           not null
+#  movie_id    :bigint           not null
 #
 # Indexes
 #

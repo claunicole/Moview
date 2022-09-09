@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search]
 
   def index
-    @movies = Movie.all
+    @movies = Movie.all.order('id DESC')
   end
 
   def new

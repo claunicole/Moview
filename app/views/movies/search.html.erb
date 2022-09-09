@@ -1,3 +1,6 @@
-<h1>Resultado de la busqueda: <%= @q %></h1>
-
-<%= render partial:'movie', collection:@movie%>
+<div class="search-container">
+    <h1>Resultado de la busqueda: <%= @q %></h1>
+    <div class="d-flex flex-row justify-center align-items-center flex-wrap">
+        <%= render partial:'movie', collection:@movie%>
+    </div>
+</div>

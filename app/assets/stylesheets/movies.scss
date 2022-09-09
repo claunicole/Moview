@@ -1,12 +1,24 @@
+.movies-text{
+    margin-top: 150px;
+    margin-left: 50px;
+}
+
+.button-review{
+    margin-left: 50px;
+    margin-top: 35px;
+}
+
 .movie{
     border: none;
 }
 
 .card-body {
-background-color: #fff;
-border-radius: 2px;
-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-padding: 20px;
+    min-height: 300px;
+    min-width: 400px;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    padding: 20px;
 
 }
 
@@ -36,4 +48,12 @@ body{
 
 .category-container p {
     margin-right: 10px;
+}
+
+.show-container {
+    margin: 200px 100px 50px;
+}
+
+.edit-container, .new-container, .search-container {
+    margin: 150px 80px 20px;
 }

@@ -6,7 +6,7 @@
 #  content    :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  movie_id   :integer          not null
+#  movie_id   :bigint           not null
 #
 # Indexes
 #
