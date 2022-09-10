@@ -60,11 +60,15 @@
     margin: 200px 100px 100px;
 }
 
-.category-container, .show-category, .new-category, .edit-category{
+.categories-container, .show-category, .new-category, .edit-category{
     margin: 150px 100px 100px;
 }
 
 .category-container{
     display: flex;
     flex-direction: column;
+}
+
+.mensaje{
+    top: 130px;
 }
