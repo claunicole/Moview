@@ -42,3 +42,6 @@
 
 #Ignore credentials
 /config/credentials.yml.enc
+
+#/Ignore .env
+.env
