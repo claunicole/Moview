@@ -14,7 +14,7 @@
             <h6 class="card-subtitle">Fecha: <%= @movie.date%></h6>
             <div class="col-lg-7 col-md-7 col-sm-6">
             <h4 class="box-title mt-5">Reseña:</h4>
-            <p ><%= @movie.review %></p>
+            <p class="show-review"><%= @movie.review %></p>
             <% if signed_in? %>
                 <div class="m-4">
                 <%= link_to 'Editar', edit_movie_path(@movie), class:"btn btn-primary" %>

@@ -5,7 +5,7 @@
             </h4>
             <p>Donde ver: <%= movie.platform %></p> 
             <% if movie.cover.present? %>
-              <%= image_tag url_for(movie.cover), style:"max-width:300px" %>
+              <%= image_tag url_for(movie.cover), class:'movie-cover' %>
             <% end %>
             <%= link_to "Ver Detalles", movie , class:'btn btn-primary m-2' %>
         </div>
