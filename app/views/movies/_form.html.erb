@@ -9,39 +9,39 @@
     <% end %>
          
    
-     <div class="col-md-6 m-5">
+     <div class="form-container">
         <div class="form-group">
-           <div class="col-md-8">
+           <div class="col-md-8 form-sub">
                 <%= f.label 'Titulo' %>
-                <%= f.text_field :title, class:"form-control" %>
+                <%= f.text_field :title, class:"form-title" %>
             </div>
         </div>
         <div class="form-group">
-            <div class="col-md-8">
+            <div class="col-md-8 form-sub">
                 <%= f.label 'Plataforma' %>
-                <%= f.text_field :platform, class:"form-control" %>               
+                <%= f.text_field :platform, class:"form-title" %>               
             </div>
         </div>
         <div class="form-group">
-            <div class="col-md-8">
+            <div class="col-md-8 form-sub">
                 <%= f.label 'Fecha de estreno' %>
-                <%= f.date_field :date, class:"form-control" %>
+                <%= f.date_field :date, class:"form-title" %>
             </div>
         </div>
         <div class="form-group">
-            <div class="col-md-8">
+            <div class="col-md-8 form-sub">
                 <%= f.label 'Agregar imagen: ', class:"m-3" %>
-                <%= f.file_field :cover %>
+                <%= f.file_field :cover, class:"add-cover" %>
             </div>
         </div>
         <div class="form-group">
-            <div class="col-md-8">
+            <div class="col-md-8 form-sub">
                 <%= f.label 'Reseña' %>
-                <%= f.text_area :review, class:"form-control" %>
+                <%= f.text_area :review, class:"form-title" %>
             </div>
         </div>
         <div class="form-group">
-        <div class="col-md-8">
+        <div class="col-md-8 form-sub">
             <%= f.label 'Categoria:' %>
             <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |category| %>   
                 <%= category.label class:"m-2" do %>

@@ -2,14 +2,17 @@
     display: flex;
     justify-content:flex-start;
     min-width: 100%;
-    height: 150px;
-    padding: 25px;
-    position: fixed;
-    top: 0px;
-    background-color: white;
-    color: #213547;
-    z-index: 100;
+    height: 180px;
+    background-color: #213547;
+    color: white;
 }
+
+.search {
+    display: flex;
+    margin-left: 100px;
+    width: 200px;
+}
+
 
 .layout {
     display: grid;
@@ -31,6 +34,8 @@
     position: relative ;
     min-height: 120px;
     width: 100%;
+    color: white;
+    background-color: #213547;
 }
 
 .social-media{
@@ -38,7 +43,7 @@
     flex-direction: row;
     list-style: none;
     padding: 0;
-    margin: 30px 0 0;
+    margin: 20px 0 0;
     gap: 40px;
 }
 
@@ -54,9 +59,25 @@
     filter: brightness(0) invert(1);
 }
 
+.social-media li {
+    margin-bottom: 20px;
+}
+
+.copyright {
+    font-size: 0.8rem;
+}
+
 .category-container{
     display: flex;
     flex-direction: column;
+}
+
+.log-in-container, .register-container {
+    margin: 80px 50px 80px;
+}
+
+.categories-container, .show-category, .new-category, .edit-category{
+    margin: 80px 50px 50px;
 }
 
 @media (min-width: 1024px) {
@@ -67,6 +88,15 @@
         width: 100%;
         top: 0;
         z-index: 100;
+        padding-left: 20px;
+    }
+
+    .search {
+        width: 250px;  
+    }
+
+    .login-container{
+        display: flex;
     }
 
     .form-inline {
@@ -82,26 +112,11 @@
         width: 100%;
     }
 
-    .social-media{
-        padding: 0;
-        margin: 30px 0 0;
-        gap: 40px;
+    .copyright {
+        font-size: 1.1rem;
     }
-
-    .socialmedia-icon {
-        width: 30px;
-        height: 30px;    
-    }
-
-    .social-media li {
-        margin-bottom: 20px;
-    }
-
-    .social-media img {
-        width: 30px;
-        height: auto;
-    }
-
+    
+   
     .log-in-container, .register-container {
         margin: 200px 100px 100px;
     }

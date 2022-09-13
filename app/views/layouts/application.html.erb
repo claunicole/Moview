@@ -14,27 +14,29 @@
   <body>
     <section class="layout">
       <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white"> 
+        <nav class="navbar"> 
             <%= link_to root_path, class: "nav-link" do  %>
               <%= image_tag "logo.png", alt: "ValoradorPeliculas", height: 100, class:'m-2' %>
             <% end %>
             <% if signed_in? %>
-            <%= link_to 'Cerrar Sesión', destroy_user_session_path, class:'nav-link m-5', data: { turbo_method: :delete } %>
+              <%= link_to 'Cerrar Sesión', destroy_user_session_path, class:'nav-link m-5', data: { turbo_method: :delete } %>
             <% else %>
-              <%= link_to "Ingresar", new_user_session_path, class:'nav-link m-4' %>
-              <%= link_to "Registrarse", new_user_registration_path, class:'nav-link m-4' %>
+             <div class="login-container">
+                <%= link_to "Ingresar", new_user_session_path, class:'nav-link m-4' %>
+                <%= link_to "Registrarse", new_user_registration_path, class:'nav-link m-4' %>
+             </div>
             <% end %>
-            <%= form_tag search_movies_path, class:"form-inline my-2 my-lg-0", method: :get do %>
-                <%= text_field_tag :q, params[:q], placeholder:"Buscar", class:"form-control mr-sm-2" %>
+            <%= form_tag search_movies_path, class:"search", method: :get do %>
+                <%= text_field_tag :q, params[:q], placeholder:"Buscar", class:"form-control" %>
                 <button class="btn btn-outline-success", type:"submit" >Enviar</button>           
-        <% end %>
+            <% end %>
         </nav>
       </header>
       <main>
          <%= render partial: 'partials/messages' %>
          <%= yield %>
       </main>
-      <footer class="bg-dark text-white p-4 footer">
+      <footer class="footer">
       <ul class="social-media">
         <li>
         <%=link_to "https://www.linkedin.com/in/claudia-gonzalez-fuentes/", :target => "_blank" do %>
@@ -52,7 +54,7 @@
            <% end %>
         </li>
       </ul>
-      <p>Derechos reservados &copy Claudia Gonzalez <%=Time.now.year%> </p>
+      <p class="copyright">Derechos reservados &copy Claudia Gonzalez <%=Time.now.year%> </p>
       </footer>
     </section>
   </body>
