@@ -11,6 +11,9 @@ Rails.application.configure do
   # Do not eager load code on boot.
   config.eager_load = false
 
+  #host
+  config.hosts << "moview.up.railway.app"
+
   config.active_job.queue_adapter = :sidekiq
 
   # Show full error reports.
