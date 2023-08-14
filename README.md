@@ -58,8 +58,3 @@ El Navbar permite ir a iniciar sesión, registrarse y ademas utilizar el buscado
 
 Para mayor referencia del proyecto, revise la [Documentación Moview](https://docs.google.com/presentation/d/1EDSi0o85jb0A73uxaNKAXFDeZB4ZA-2uZE5xp-0zNAE/edit?usp=sharing)
 ---
-### Deploy
-
-El deploy fue realizado en Heroku, para acceder puede dar click [Aquí](https://review-movie-app.herokuapp.com/)
-
-# [Website Moview](https://review-movie-app.herokuapp.com/)
